@@ -17,12 +17,48 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
 
 public class NumbersActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.words_list);
+
+        //Create an arraylist of words
+        // This is a custom list as it requires two list items
+        ArrayList<Word> words = new ArrayList<Word>();
+
+        /*// Creating a new word object
+        Word w = new Word("lutti","one");
+        // Adding word object to arraylist words
+        words.add(w);*/
+
+       // Above two line of codes can be combined as follows
+        words.add(new Word("lutti","one",R.drawable.number_one));
+        words.add(new Word("otiiko","two",R.drawable.number_two));
+        words.add(new Word("tolookosu","three",R.drawable.number_three));
+        words.add(new Word("oyyisa","four",R.drawable.number_four));
+        words.add(new Word("massokka","five",R.drawable.number_five));
+        words.add(new Word("temmokka","six",R.drawable.number_six));
+        words.add(new Word("lutti","seven",R.drawable.number_seven));
+        words.add(new Word("lutti","eight", R.drawable.number_eight));
+        words.add(new Word("l","eight", R.drawable.number_nine));
+        words.add(new Word("m","eight", R.drawable.number_ten));
+
+
+        WordAdapter itemsAdapter= new WordAdapter(this, words);
+
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(itemsAdapter);
+
+
     }
+
 }
+
+

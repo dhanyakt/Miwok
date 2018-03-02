@@ -17,12 +17,33 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+import static com.example.android.miwok.R.id.colors;
 
 public class PhrasesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrases);
+        setContentView(R.layout.words_list);
+
+
+        ArrayList<Word> phrases = new ArrayList<Word>();
+
+
+        // Above two line of codes can be combined as follows
+        phrases.add(new Word("minto wuksus", "Where are you going?"));
+        phrases.add(new Word("tinnә oyaase'nә","What is your name? "));
+
+
+        WordAdapter itemsAdapter= new WordAdapter(this, phrases);
+
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(itemsAdapter);
+
+
     }
 }
