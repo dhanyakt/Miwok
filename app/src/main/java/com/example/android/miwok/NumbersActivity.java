@@ -47,8 +47,8 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(new Word("temmokka","six",R.drawable.number_six));
         words.add(new Word("lutti","seven",R.drawable.number_seven));
         words.add(new Word("lutti","eight", R.drawable.number_eight));
-        words.add(new Word("l","eight", R.drawable.number_nine));
-        words.add(new Word("m","eight", R.drawable.number_ten));
+        words.add(new Word("l","nine", R.drawable.number_nine));
+        words.add(new Word("m","ten", R.drawable.number_ten));
 
 
         WordAdapter itemsAdapter= new WordAdapter(this, words);
