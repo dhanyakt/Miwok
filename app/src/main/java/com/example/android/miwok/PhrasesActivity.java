@@ -39,7 +39,7 @@ public class PhrasesActivity extends AppCompatActivity {
         phrases.add(new Word("tinnә oyaase'nә","What is your name? "));
 
 
-        WordAdapter itemsAdapter= new WordAdapter(this, phrases);
+        WordAdapter itemsAdapter= new WordAdapter(this, phrases,R.color.category_phrases);
 
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
